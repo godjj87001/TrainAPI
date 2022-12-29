@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+
+<h2>車站名稱</h2>
+<table border="１">
+<tr th:each="obj:${trainInfoList}">
+    <td th:text="*{obj.station_name_zh_tw}"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

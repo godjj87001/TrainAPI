@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=”http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetable</title>
+</head>
+<body>
+    <!--標題-->
+    <div class="main-header">
+        <h2>
+            <strong>列車時刻/車次查詢</strong>
+        </h2>
+    </div>
+    <!--標題 end-->
+
+    <!-- 頁面內容 -->
+    <div id="pageContent">
+        <form id="queryForm" action="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip112/querybytime" method="post"
+              novalidate="novalidate"><input type="hidden" name="_csrf" value="4c74be88-5728-4104-b44a-22821ebfff63">
+            <!--搜尋區塊-->
+            <div class="panel-area">
+
+                <!-- 出發站 -->
+                <div class="zone site-wrapper">
+                    <div class="form_title">
+                        <label for="startStation">出發站</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input id="startStation" type="text" name="startStation"
+                               class="startStation ui-autocomplete-input" data-autocomplete="station"
+                               placeholder="出發站" value="" autocomplete="off">
+                        <button type="button" title="文字站點查詢" class="icon icon-list" data-type="startStation">
+                            文字站點查詢
+                        </button>
+
+                    </div>
+                    <a href="https://www.railway.gov.tw/tra-tip-web/tip/tip001/tip111/view" target="_blank"
+                       title="車站代碼查詢(另開新視窗)" class="color-rag">車站名稱查詢</a>
+                </div>
+                <!-- 出發站與抵達站交換功能 -->
+
+                <!-- 抵達站 -->
+                <div class="zone site-wrapper">
+                    <div class="form_title">
+                        <label for="endStation">抵達站</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input id="endStation" type="text" name="endStation" class="endStation ui-autocomplete-input"
+                               data-autocomplete="station" placeholder="抵達站" value="" autocomplete="off">
+                        <button type="button" title="文字站點查詢" class="icon icon-list" data-type="endStation">
+                            文字站點查詢
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <!-- 日期 -->
+                <div class="zone date-wrapper">
+                    <div class="form_title">
+                        <label class="rideDate" for="rideDate">日期</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" data-plugin="datepicker" class="rideDate" placeholder="YYYY/MM/DD"
+                               data-date-start-date="+0d" id="rideDate" name="rideDate" value="2022/12/14">
+                        <button type="button" class="icon icon-calendar datepicker" title="選擇日期"
+                                style="padding: 1px;">選擇日期
+                        </button>
+                    </div>
+                </div>
+                <!-- 依時段查詢方式(開始/結束) -->
+                <div class="zone time-wrapper byTime">
+                    <div class="form_title">
+                        <label>時段</label>
+                        <label for="startTime" title="查詢出發時間">查詢出發時間</label>
+                    </div>
+                    <div class="switch-time">
+                        <!-- 時段開始 -->
+                        <div class="zone">
+                            <select id="startTime" class="form-control" name="startTime" aria-invalid="false">
+
+                                <option value="00:00" selected="selected">00:00</option>
+                                <option value="00:30">00:30</option>
+                                <option value="01:00">01:00</option>
+                                <option value="01:30">01:30</option>
+                                <option value="02:00">02:00</option>
+                                <option value="02:30">02:30</option>
+                                <option value="03:00">03:00</option>
+                                <option value="03:30">03:30</option>
+                                <option value="04:00">04:00</option>
+                                <option value="04:30">04:30</option>
+                                <option value="05:00">05:00</option>
+                                <option value="05:30">05:30</option>
+                                <option value="06:00">06:00</option>
+                                <option value="06:30">06:30</option>
+                                <option value="07:00">07:00</option>
+                                <option value="07:30">07:30</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option>
+                                <option value="23:59">23:59</option>
+
+                            </select>
+                        </div>
+                        <!-- 時段結束 -->
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

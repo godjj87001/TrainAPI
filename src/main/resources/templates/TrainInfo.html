@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TrainInfoPage</title>
+</head>
+<body>
+<!-- 接收資料的Key 值為message -->
+<div>[[${message}]]</div>
+<li th:each="obj : ${message}">
+    <div th:object ="${obj}">
+
+        <span th:text="*{obj.getTrainDate}"></span>
+        <span th:text="*{obj.gettrainNo}"></span>
+        <span th:text="*{obj.getdepartureTime}"></span>
+        <span th:text="*{obj.arrivalTime}"></span>
+        <span th:text="*{obj.travelTime}"></span>
+        <span th:text="*{obj.startingStationNameZhTw}"></span>
+        <span th:text="*{obj.ending_station_nameZhTw}"></span>
+        <span th:text="*{obj.departure_time}"></span>
+        <span th:text="*{obj.trainTypenameZhTw}"></span>
+        <span th:text="*{obj.tripLine}"></span>
+
+    </div>
+</li>
+
+</body>
+</html>
